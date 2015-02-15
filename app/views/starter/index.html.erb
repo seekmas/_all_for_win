@@ -1,0 +1,51 @@
+<div class="banner">
+
+    <table width="100%">
+      <tr valign="top">
+        <td width="70%">
+            <%=image_tag ('logo.png') , :class => :logo%>
+        </td>
+
+        <td width="15%"><%=image_tag ('location-icon.gif') , :class => :location %> </td>
+        <td width="15%">
+          <br/>
+          <p class="location-info">上 海</p>
+          <p class="location-info"> 9 &nbsp;年</p>
+        </td>
+      </tr>
+    </table>
+</div>
+
+<% if (@user = Alias.find_by(:user_id => current_user.id)) == nil %>
+
+    <%= link_to '完善我的昵称信息' , new_alias_path %>
+
+<% else %>
+    <div class="user-board">
+    <%=image_tag @user.avatar.url(:medium) , :class => 'img-circle' %>
+    <p style="color: #ffffff;"><%= @user.name %></p>
+    </div>
+
+    <div class="row">
+    <% current_user.titles.each do |title| %>
+        <div class="col-md-2 col-sm-2" align="center" style="display: inline">
+
+          <div class="medal-body" style="background: <%= title.color %>;color:#ffffff;">
+            <%= image_tag title.icon.url(:medium) , :class => 'medal-icon' %>
+            <span class="medal-title"><%= title.name %></span>
+          </div>
+        </div>
+    <% end %>
+    </div>
+
+    <div class="status">
+
+      <%=current_user.statuses.last.status_text %>
+
+    </div>
+
+    <div class="comment text-center">
+     <%=image_tag ('like-icon.gif') , :class => :like%> 已有 <%= 100 %> 好友评论
+    </div>
+
+<% end %>

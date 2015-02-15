@@ -1,0 +1,26 @@
+<%= form_for(@alias) do |f| %>
+  <% if @alias.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alias.errors.count, "error") %> prohibited this alias from being saved:</h2>
+
+      <ul>
+      <% @alias.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label t('alias.views.name') %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label t('alias.views.avatar') %><br>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit t('alias.views.upload') , :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<%= simple_form_for(@title) do |f| %>
+
+
+  <div class="field">
+
+    <%= f.input :icon %>
+  </div>
+  <div class="field">
+
+    <%= f.input :name %>
+  </div>
+  <div class="field">
+    <%= f.input :color, as: :minicolors, input_html: {data: {
+                              minicolors: {theme: :bootstrap, position: :right}}} %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('title.views.submit') , :class => 'btn' %>
+  </div>
+<% end %>

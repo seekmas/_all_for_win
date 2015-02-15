@@ -1,0 +1,27 @@
+<h1 class="title">Listing titles</h1>
+
+    <% @titles.each do |title| %>
+      <div class="col-md-3" align="center">
+
+        <div class="medal-body" style="background: <%= title.color %>;color:#ffffff;">
+          <%= image_tag title.icon.url(:thumb) %>
+          <span class="medal-title"><%= title.name %></span>
+        </div>
+
+        <p class="white-title">
+
+          <%= link_to 'Get' , get_title_path(title.id)%>
+
+          <%= link_to 'Show', title %>
+
+          <%= link_to 'Edit', edit_title_path(title) %>
+
+          <%= link_to 'Destroy', title, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+
+      </div>
+    <% end %>
+
+<div class="col-md-12">
+<%= link_to 'New Title', new_title_path %>
+</div>
