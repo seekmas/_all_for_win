@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   get '/:title_id/get-title' , :to => 'titles#get_title' , :as => 'get_title'
 
-  get '/auth/:provider', to: 'sessions#create' , :as => 'wechat_oauth'
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
 
   root 'starter#index'
 end

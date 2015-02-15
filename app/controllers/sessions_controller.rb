@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.where(auth_hash: auth_hash).first_or_create
-    current_user = @user
-    redirect_to '/'
+    auth_hash = request.env['omniauth.auth']
+
+    render :text => auth_hash.inspect
   end
 
   protected
