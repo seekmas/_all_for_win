@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/:title_id/get-title' , :to => 'titles#get_title' , :as => 'get_title'
 
+  get   '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
 
