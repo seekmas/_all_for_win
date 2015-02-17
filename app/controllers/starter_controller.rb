@@ -7,10 +7,11 @@ class StarterController < ApplicationController
         redirect_to new_user_session_path
       else
         @user = Alias.find_by(:user_id => current_user.id)
+        @u = User.find(current_user.id)
         redirect_to card_path(@user.id)
       end
 
-      @u = User.find(current_user.id)
+
     else
       @user = Alias.find_by(:user_id => params[:id])
       @u = User.find(params[:id])
