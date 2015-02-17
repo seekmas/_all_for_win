@@ -29,7 +29,7 @@
     </div>
 
     <div class="row">
-    <% current_user.titles.each do |title| %>
+    <% @user.titles.each do |title| %>
         <div class="col-md-2 col-sm-2" align="center" style="display: inline">
 
           <div class="medal-body" style="background: <%= title.color %>;color:#ffffff;">
@@ -42,7 +42,7 @@
 
     <div class="status">
 
-      <%=current_user.statuses.last.status_text %>
+      <%=@user.statuses.last.status_text %>
 
     </div>
 
