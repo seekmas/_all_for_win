@@ -18,9 +18,21 @@
 //= require jquery.minicolors.simple_form
 //= require input
 //= require jquery-scrollbox/jquery.scrollbox.min
+//= require wheel-menu/jquery.wheelmenu.min
 //= require_tree .
 
 
-$(document).ready(function(){
+var ready;
+ready = function() {
     $('input[type=file]').bootstrapFileInput();
-});
+
+    $(".wheel-button").wheelmenu({
+        trigger: "click",
+        animation: "fly",
+        animationSpeed: "slow",
+        angle: [0, 360]
+    });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -1,1 +1,2 @@
 asset 'jquery-scrollbox' , 'https://github.com/wmh/jquery-scrollbox.git'
+asset 'wheel-menu' , 'https://github.com/peachananr/wheel-menu.git'

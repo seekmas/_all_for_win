@@ -1,6 +1,7 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "jquery-scrollbox": "https://github.com/wmh/jquery-scrollbox.git"
+    "jquery-scrollbox": "https://github.com/wmh/jquery-scrollbox.git",
+    "wheel-menu": "https://github.com/peachananr/wheel-menu.git"
   }
 }

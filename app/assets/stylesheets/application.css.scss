@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "variable";
 @import "jquery.minicolors";
+@import "wheel-menu/wheelmenu";
+@import "font-awesome";
 
 $font-color: #eeeeee;
 $strong-color: #666666;
@@ -173,8 +175,24 @@ a {
   color: #ffffff;
 }
 
+.wheel-menu {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #ffffff;
+}
 
+.wheel-menu a {
+  color: #ffffff;
+}
 
+.wheel-menu a:hover {
+  text-decoration: none;
+}
+
+.wheel {
+  background: #336699;
+  border-radius: 100px;
+}
 
 div.dance {
   width: 225px; height: 400px;

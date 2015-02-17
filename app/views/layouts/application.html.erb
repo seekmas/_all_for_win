@@ -47,29 +47,49 @@
           <%= bootstrap_flash %>
           <%= yield %>
 
+
+          <div class="col-md-12 wheel-menu" align="center">
+            <a href="#wheel2" class="wheel-button text-center">
+              <i class="fa fa-list fa-2x"></i>
+            </a>
+            <ul id="wheel2" data-angle="all" class="wheel">
+              <% if current_user %>
+              <li class="item text-center"><a href="<%=url_for new_cover_path %>"> <i class="fa fa-picture-o fa-2x"></i> <br/>封面</a></li>
+
+              <li class="item text-center">
+                <%= link_to( '<i class="fa fa-home fa-2x"></i> <br/>注销'.html_safe, destroy_user_session_path, :method => :delete) %></li>
+
+              <li class="item text-center"><a href="<%=url_for edit_registration_path(:user) %>"> <i class="fa fa-database fa-2x"></i> <br/>密码</a></li>
+
+              <li class="item text-center"><a href="<%=url_for root_path %>"> <i class="fa fa-home fa-2x"></i> <br/>主页</a></li>
+
+              <li class="item text-center"><a href="<%=url_for  edit_alias_path(:user) %>"> <i class="fa fa-pencil-square-o fa-2x"></i> <br/>资料</a></li>
+
+              <li class="item text-center"><a href="<%=url_for titles_path %>"> <i class="fa fa-smile-o fa-2x"></i> <br/>标签</a></li>
+
+              <li class="item text-center"><a href="<%=url_for new_status_path %>"> <i class="fa fa-tags fa-2x"></i> <br/>状态</a></li>
+
+
+            <% else %>
+
+                  <li class="item text-center"><a href="<%=url_for new_registration_path(:user) %>"> <i class="fa fa-sign-out fa-2x"></i> <br/>注册</a></li>
+
+                  <li class="item text-center"><a href="<%=url_for new_session_path(:user) %>"> <i class="fa fa-sign-in fa-2x"></i> <br/>登陆</a></li>
+
+              <% end %>
+            </ul>
+          </div>
+
           </div></div>
         </div>
       </div><!--/row-->
 
-
-
-      <% if current_user %>
-          <%= link_to('我的主页' , root_path )%> |
-          <%= link_to('我的封面' , new_cover_path())%> |
-          <%= link_to('注销', destroy_user_session_path, :method => :delete) %> |
-          <%= link_to('修改密码', edit_registration_path(:user)) %>
-          <br/>
-          <%= link_to('修改信息' , edit_alias_path(:user))%> |
-          <%= link_to('标签信息' , titles_path())%> |
-          <%= link_to('更新状态' , new_status_path())%> |
-      <% else %>
-          <%= link_to('注册', new_registration_path(:user)) %> |
-          <%= link_to('登陆', new_session_path(:user)) %>
-      <% end %>
-
-      <%=request.env['omniauth.auth']%>
-      <%= link_to 'Wechat', '/auth/wechat/callback' %>
     </div> <!-- /container -->
+    <style>
+        .panel {
+            background: #D43A3D;
+        }
+    </style>
 
   </body>
 </html>

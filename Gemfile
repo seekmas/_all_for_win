@@ -32,6 +32,8 @@ gem "paperclip"
 gem 'bower-rails'
 gem 'simple_form'
 gem 'jquery-minicolors-rails'
+gem "font-awesome-rails"
+gem 'jquery-turbolinks'
 
 gem 'omniauth'
 gem 'omniauth-oauth2'
