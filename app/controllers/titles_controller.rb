@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TitlesController < ApplicationController
   before_action :set_title, only: [:show, :edit, :update, :destroy]
 

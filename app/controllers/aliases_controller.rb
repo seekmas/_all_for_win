@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AliasesController < ApplicationController
   before_action :set_alias, only: [:show, :edit, :update, :destroy]
 

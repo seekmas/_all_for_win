@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CoversController < ApplicationController
   before_action :set_cover, only: [:show, :edit, :update, :destroy]
 
