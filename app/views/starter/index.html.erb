@@ -50,18 +50,15 @@
      <a class="comment-link" href="<%=url_for list_comment_path(@user.id)%>"><%= image_tag ('like-icon.gif') , :class => :like %> ( 已有 <%= @user.comments.length %> 好友评论)</a>
     </div>
 
+    <% if current_user %>
     <div align="center">
-
       <%= form_for(@comment) do |f| %>
             <%= f.hidden_field :alias_id , :value => @user.id %>
             <%= f.text_field :comment , :class => 'input-comment' %>
             <%= f.submit '评论' , :class => 'btn btn-lg btn-primary' %>
-
       <% end %>
-
-
-
     </div>
+    <% end %>
 
     <style>
       .panel {
