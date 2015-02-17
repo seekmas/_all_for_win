@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cover.user_id %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @cover.cover %>
+</p>
+
+<%= link_to 'Edit', edit_cover_path(@cover) %> |
+<%= link_to 'Back', covers_path %>

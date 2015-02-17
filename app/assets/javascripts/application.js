@@ -17,7 +17,7 @@
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
 //= require input
-
+//= require jquery-scrollbox/jquery.scrollbox.min
 //= require_tree .
 
 

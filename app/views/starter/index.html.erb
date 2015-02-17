@@ -16,14 +16,16 @@
     </table>
 </div>
 
-<% if (@user = Alias.find_by(:user_id => current_user.id)) == nil %>
+<% if @user == nil %>
 
+    <% if params[:id] == nil %>
     <%= link_to '完善我的昵称信息' , new_alias_path %>
+    <% end %>
 
 <% else %>
     <div class="user-board">
     <%=image_tag @user.avatar.url(:medium) , :class => 'img-circle' %>
-    <p style="color: #ffffff;"><%= @user.name %></p>
+    <p><%= @user.name %></p>
     </div>
 
     <div class="row">
@@ -45,7 +47,25 @@
     </div>
 
     <div class="comment text-center">
-     <%=image_tag ('like-icon.gif') , :class => :like%> 已有 <%= 100 %> 好友评论
+     <a class="comment-link" href="<%=url_for list_comment_path(@user.id)%>"><%= image_tag ('like-icon.gif') , :class => :like %> ( 已有 <%= @user.comments.length %> 好友评论)</a>
     </div>
 
+    <div align="center">
+
+      <%= form_for(@comment) do |f| %>
+            <%= f.hidden_field :alias_id , :value => @user.id %>
+            <%= f.text_field :comment , :class => 'input-comment' %>
+            <%= f.submit '评论' , :class => 'btn btn-lg btn-primary' %>
+
+      <% end %>
+
+
+
+    </div>
+
+    <style>
+      .panel {
+          background: #D43A3D;
+      }
+    </style>
 <% end %>

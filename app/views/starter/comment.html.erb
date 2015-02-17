@@ -1,0 +1,49 @@
+<div class="banner">
+
+  <table width="100%">
+    <tr valign="top">
+      <td width="70%">
+        <%=image_tag ('logo.png') , :class => :logo %>
+      </td>
+
+      <td width="15%"><%=image_tag ('location-icon.gif') , :class => :location %> </td>
+      <td width="15%">
+        <br/>
+        <p class="location-info">上 海</p>
+        <p class="location-info"> 9 &nbsp;年</p>
+      </td>
+    </tr>
+  </table>
+
+
+  <div class="dance"></div>
+</div>
+
+<ul class="comment-list">
+<% @user.comments.each do |comment| %>
+
+<li>
+  <%=image_tag comment.alias.avatar.url(:thumb) , :class => 'img-circle avatar-thumb' %>
+
+  <%=comment.alias.name%> :
+
+  <%=comment.comment%>
+</li>
+
+<% end %>
+</ul>
+
+<div align="center">
+<%= form_for(@comment) do |f| %>
+    <%= f.hidden_field :alias_id , :value => @user.id %>
+    <%= f.text_field :comment , :class => 'input-comment' %>
+    <%= f.submit '评论' , :class => 'btn btn-lg btn-primary' %>
+
+<% end %>
+</div>
+
+<style>
+    .panel {
+        background: #D43A3D;
+    }
+</style>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215080035) do
+ActiveRecord::Schema.define(version: 20150216141518) do
 
   create_table "aliases", force: true do |t|
     t.string   "name"
@@ -23,6 +23,25 @@ ActiveRecord::Schema.define(version: 20150215080035) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "alias_id"
+  end
+
+  create_table "covers", force: true do |t|
+    t.integer  "alias_id"
+    t.string   "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "statuses", force: true do |t|

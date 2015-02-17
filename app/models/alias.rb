@@ -3,5 +3,6 @@ class Alias < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   has_one :user , :foreign_key => :user_id
+  has_many :comments
 
 end

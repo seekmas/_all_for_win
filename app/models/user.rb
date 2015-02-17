@@ -10,5 +10,8 @@ class User < ActiveRecord::Base
   has_many :user_titles
   has_many :titles , :through => :user_titles
 
+  has_many :comments
+  has_many :covers
+
   has_many :statuses
 end
