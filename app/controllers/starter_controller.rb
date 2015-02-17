@@ -7,10 +7,14 @@ class StarterController < ApplicationController
       else
         @user = Alias.find_by(:user_id => current_user.id)
       end
+
+      @u = User.find(current_user.id)
     else
       @user = Alias.find_by(:user_id => params[:id])
+      @u = User.find(params[:id])
     end
     @comment = Comment.new
+
   end
 
   def comment
