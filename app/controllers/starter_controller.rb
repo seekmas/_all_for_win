@@ -1,9 +1,12 @@
 class StarterController < ApplicationController
 
   def index
-
     if params[:id] == nil
-      @user = Alias.find_by(:user_id => current_user.id)
+      if current_user == nil
+        redirect_to new_user_session_path
+      else
+        @user = Alias.find_by(:user_id => current_user.id)
+      end
     else
       @user = Alias.find_by(:user_id => params[:id])
     end
