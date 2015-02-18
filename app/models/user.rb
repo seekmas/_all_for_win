@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable ,
          :omniauthable, :omniauth_providers => [:wechat]
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "auth/wechat/callback" }
 
   belongs_to :alias
 
