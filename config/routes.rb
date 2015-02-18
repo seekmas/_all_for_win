@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :aliases
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "auth/wechat/callback" }
+
 
   get '/:title_id/get-title' , :to => 'titles#get_title' , :as => 'get_title'
   get 'auth/:provider/callback', to: 'sessions#create'
