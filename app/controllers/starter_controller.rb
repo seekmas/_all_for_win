@@ -1,4 +1,6 @@
 # encoding: utf-8
+
+
 class StarterController < ApplicationController
 
   def index
@@ -17,7 +19,6 @@ class StarterController < ApplicationController
       @u = User.find(params[:id])
     end
     @comment = Comment.new
-
   end
 
   def comment
