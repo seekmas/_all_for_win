@@ -1,5 +1,5 @@
 # encoding: utf-8
-class SessionsController < ApplicationController
+class SessionsController < Devise::OmniauthCallbacksController
 
   def create
     render :text => auth_hash
