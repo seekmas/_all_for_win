@@ -35,7 +35,7 @@ gem 'jquery-minicolors-rails'
 gem "font-awesome-rails"
 gem 'jquery-turbolinks'
 
-gem 'omniauth'
-gem 'omniauth-oauth2'
-gem 'omniauth-facebook'
+# gem 'omniauth'
+# gem 'omniauth-oauth2'
+# gem 'omniauth-facebook'
 gem "omniauth-wechat-oauth2"
