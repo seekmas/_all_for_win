@@ -3,8 +3,7 @@
 Devise.setup do |config|
 
   config.omniauth :wechat, 'wx8a130f56606d0167', 'f52b96ef6471c0698ca53c7a2d16ddd1',
-                  :authorize_params => {:scope => "snsapi_base"},
-                  provider_ignores_state: true
+                  :authorize_params => {:scope => "snsapi_base"}
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
