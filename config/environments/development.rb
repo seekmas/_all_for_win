@@ -36,7 +36,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  ENV['wechat_key'] = 'wx8a130f56606d0167'
-  ENV['wechat_secret'] = 'f52b96ef6471c0698ca53c7a2d16ddd1'
-
 end
