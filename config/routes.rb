@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :aliases
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/my_omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
   get '/:title_id/get-title' , :to => 'titles#get_title' , :as => 'get_title'
